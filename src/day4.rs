@@ -48,7 +48,7 @@ pub fn run(filename: &str, adv: bool) {
                         }
 
                         let this_count = reward.get(&game).unwrap_or(&0) + 1;
-                        if (count > 0) {
+                        if count > 0 {
                             result += 2_i32.pow((count - 1) as u32);
                             for i in 0..count {
                                 let old_count = reward.get(&(game + i + 1)).unwrap_or(&0);
