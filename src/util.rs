@@ -9,3 +9,11 @@ where
     let file = File::open(filename)?;
     Ok(io::BufReader::new(file).lines())
 }
+
+pub fn read_content<P>(filename: P) -> io::Result<String>
+where
+    P: AsRef<Path>,
+{
+    let data = std::fs::read_to_string(filename)?;
+    Ok(data)
+}
