@@ -6,7 +6,7 @@ use regex::Regex;
 
 static RE_LINE: Lazy<Regex> = Lazy::new(|| Regex::new(r"Card\s+(\d+): (.*) \| (.*)").unwrap());
 
-pub fn parse_card(line: &str) -> HashSet<i32> {
+fn parse_card(line: &str) -> HashSet<i32> {
     let mut card = HashSet::new();
     for part in line.split(' ') {
         if part.is_empty() {
