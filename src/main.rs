@@ -4,6 +4,7 @@ mod day3;
 mod day4;
 mod day5;
 mod day6;
+mod day7;
 mod util;
 
 use std::env::args;
@@ -16,6 +17,7 @@ fn main() {
     solutions.push((day4::run, false));
     solutions.push((day5::run, true));
     solutions.push((day6::run, false));
+    solutions.push((day7::run, false));
 
     for (day, (func, skip)) in solutions.iter().enumerate() {
         let day = day + 1;
