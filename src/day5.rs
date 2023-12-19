@@ -32,8 +32,6 @@ humidity-to-location map:
     .unwrap()
 });
 
-static RE_LINE: Lazy<Regex> = Lazy::new(|| Regex::new(r"Card\s+(\d+): (.*) \| (.*)").unwrap());
-
 fn map_seed(change: &Vec<(i64, i64, i64)>, seed: i64) -> i64 {
     for &(dst, src, num) in change {
         if seed >= src && seed < src + num {

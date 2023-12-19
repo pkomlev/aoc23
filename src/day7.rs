@@ -6,7 +6,6 @@ const VALUE_ORIG: &str = "23456789TJQKA";
 const VALUE_JOKE: &str = "J23456789TQKA";
 
 struct Hand {
-    pub code: String,
     pub vals: Vec<i32>,
     pub bets: i32,
     pub kind: i32,
@@ -28,7 +27,6 @@ impl Hand {
 
         let k = classify(if adv { &j } else { &v });
         Hand {
-            code: code.to_owned(),
             vals: v,
             kind: k,
             bets: bet,

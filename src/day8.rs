@@ -1,7 +1,4 @@
-use std::{
-    collections::{HashMap, HashSet},
-    mem,
-};
+use std::{collections::HashMap, mem};
 
 use crate::util;
 use once_cell::sync::Lazy;
@@ -59,7 +56,7 @@ fn run_adv(graph: &HashMap<String, Node>, direction: &Vec<char>) {
     loop {
         next.clear();
 
-        for (idx, node) in curr.iter().enumerate() {
+        for (_, node) in curr.iter().enumerate() {
             if direction[iter % direction.len()] == 'L' {
                 next.push(&graph.get(*node).unwrap().left);
             } else {
@@ -94,7 +91,7 @@ fn run_adv(graph: &HashMap<String, Node>, direction: &Vec<char>) {
         mem::swap(&mut curr, &mut next);
     }
 
-    // TODO(pkomlev): i kind of figured at this point that the following is the cycle: 
+    // TODO(pkomlev): i kind of figured at this point that the following is the cycle:
     // 0 -- delta 20803 div 0
     // 1 -- delta 23147 div 0
     // 2 -- delta 17873 div 0
