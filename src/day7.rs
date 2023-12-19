@@ -43,7 +43,6 @@ fn joke(hand: &str) -> String {
     }
 
     let ji = VALUE_JOKE.find("J").unwrap() as i32;
-    let jc = h.entry(ji).or_insert(0);
     h.remove(&ji);
 
     let mut ho: Vec<(i32, i32)> = h.into_iter().map(|(x, y)| (-y, x)).collect();

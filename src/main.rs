@@ -5,9 +5,10 @@ mod day4;
 mod day5;
 mod day6;
 mod day7;
+mod day8;
 mod util;
 
-use std::env::args;
+// use std::env::args;
 
 fn main() {
     let mut solutions: Vec<(fn(&str, bool), bool)> = Vec::new();
@@ -18,6 +19,7 @@ fn main() {
     solutions.push((day5::run, true));
     solutions.push((day6::run, false));
     solutions.push((day7::run, false));
+    solutions.push((day8::run, true));
 
     for (day, (func, skip)) in solutions.iter().enumerate() {
         let day = day + 1;
