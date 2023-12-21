@@ -1,5 +1,3 @@
-use std::collections::HashMap;
-
 use crate::util;
 
 fn bit_count(mask: u64) -> i64 {
