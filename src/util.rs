@@ -17,3 +17,11 @@ where
     let data = std::fs::read_to_string(filename)?;
     Ok(data)
 }
+
+pub fn file_exists<P>(filename: P) -> bool
+where
+    P: AsRef<Path>,
+{
+    let path: &Path = filename.as_ref();
+    return path.exists();
+}

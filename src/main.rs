@@ -47,8 +47,15 @@ fn main() {
 
     for (day, (func, skip)) in solutions.iter().enumerate() {
         let day = day + 1;
+
         let input = format!("./inputs/day{}.txt", day);
         println!("----- day {} -----", day);
+
+        if !util::file_exists(&input) {
+            println!("... no input");
+            continue;
+        }
+        
         if *skip {
             println!("... skip");
             continue;
