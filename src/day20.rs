@@ -96,11 +96,11 @@ pub fn run(filename: &str, adv: bool) {
 
     let mut queue = VecDeque::new();
 
-    let mut machine = |queue: &mut VecDeque<(usize, usize, bool)>,
-                       state: &mut Vec<u64>,
-                       from: usize,
-                       to: usize,
-                       is_high: bool| {
+    let machine = |queue: &mut VecDeque<(usize, usize, bool)>,
+                   state: &mut Vec<u64>,
+                   from: usize,
+                   to: usize,
+                   is_high: bool| {
         let nodule: &(bool, Vec<usize>, u64) = &task.nodes[to];
         if nodule.0 {
             // .. conjunction
