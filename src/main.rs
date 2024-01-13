@@ -13,6 +13,7 @@ mod day2;
 mod day20;
 mod day21;
 mod day22;
+mod day23;
 mod day3;
 mod day4;
 mod day5;
@@ -48,6 +49,7 @@ fn main() {
     solutions.push((day20::run, true));
     solutions.push((day21::run, false));
     solutions.push((day22::run, false));
+    solutions.push((day23::run, false));
 
     for (day, (func, skip)) in solutions.iter().enumerate() {
         let day = day + 1;
